@@ -4,7 +4,8 @@ class CountryConstants {
     companion object {
         const val AFEGANISTAO = "Afeganistão"
         const val ALBANIA = "Albania"
-        const val ALGERIA = "Algeria"
-        const val ANDORRA = "Andorra"
+        const val ARGELIA = "Argélia"
+        const val ANGOLA = "Angola"
+        const val ANTIGUA_E_BARBUDA = "Antigua e Barbuda"
     }
 }

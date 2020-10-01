@@ -4,7 +4,6 @@
     <string-array name="arrayOfCountries">
         <item>Afeganistão</item>
         <item>Albânia</item>
-        <item>Algeria</item>
         <item>Argélia</item>
         <item>Angola</item>
         <item>Antigua e Barbuda</item>
@@ -16,15 +15,14 @@
         <item>Bahamas</item>
         <item>Bahrain</item>
         <item>Bangladesh</item>
-        <item>Barbadas</item>
-        <item>Bielo-Rússia</item>
-        <item>Belgium</item>
+        <item>Barbadás</item>
+        <item>Bielorrússia</item>
         <item>Bélgica</item>
         <item>Benin</item>
         <item>Butão</item>
         <item>Bolívia</item>
         <item>Bósnia e Herzegovina</item>
-        <item>Botswana</item>
+        <item>Botsuana</item>
         <item>Brasil</item>
         <item>Brunei</item>
         <item>Bulgária</item>
@@ -36,7 +34,7 @@
         <item>Camarões</item>
         <item>Canadá</item>
         <item>República Centro-Africana</item>
-        <item>Chad</item>
+        <item>Chade</item>
         <item>Chile</item>
         <item>China</item>
         <item>Colômbia</item>
@@ -174,7 +172,7 @@
         <item>Uganda</item>
         <item>Ucrânia</item>
         <item>Emirados Árabes Unidos</item>
-        <item>United Kingdom</item>
+        <item>Reino Unido</item>
         <item>Uruguai</item>
         <item>Uzbequistão</item>
         <item>Venezuela</item>
