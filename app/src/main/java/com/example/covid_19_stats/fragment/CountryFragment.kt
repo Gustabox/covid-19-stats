@@ -14,6 +14,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.example.covid_19_stats.R
 import com.example.covid_19_stats.model.country.Data
+import com.example.covid_19_stats.util.const.CountryConstants
 import com.example.covid_19_stats.util.resource.Status
 import com.example.covid_19_stats.viewmodel.MainActivityViewModel
 import kotlinx.android.synthetic.main.fragment_country.*
@@ -61,8 +62,8 @@ class CountryFragment : Fragment() {
     private fun setCountryInformations() {
         if (autoCompleteCountry.text.isNotEmpty()) {
             //TODO: CONSTANT
-            if (autoCompleteCountry.text.toString() == "Afeganistão") showViewWithInformations("afghanistan")
-            if (autoCompleteCountry.text.toString() == "Albania") showViewWithInformations("albania")
+            if (autoCompleteCountry.text.toString() == CountryConstants.AFEGANISTAO) showViewWithInformations("afghanistan")
+            if (autoCompleteCountry.text.toString() == CountryConstants.ALBANIA) showViewWithInformations("albania")
         }
     }
 
