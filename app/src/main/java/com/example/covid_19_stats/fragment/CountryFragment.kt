@@ -13,8 +13,11 @@ import android.widget.Button
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.example.covid_19_stats.R
+import com.example.covid_19_stats.model.country.Country
 import com.example.covid_19_stats.model.country.Data
+import com.example.covid_19_stats.model.country.all.DataCountryAll
 import com.example.covid_19_stats.util.resource.Status
+import com.example.covid_19_stats.view.adapter.RecyclerAdapterStateCase
 import com.example.covid_19_stats.viewmodel.MainActivityViewModel
 import kotlinx.android.synthetic.main.fragment_country.*
 
@@ -28,6 +31,7 @@ class CountryFragment : Fragment() {
 
     private lateinit var autoCompleteCountry: AutoCompleteTextView
     private lateinit var buttonSearchCountry: Button
+    private var listOfAllCountries = ArrayList<Country>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -331,7 +335,9 @@ class CountryFragment : Fragment() {
                     }
                     Status.SUCCESS -> {
                         resource.data?.let {
-                            //TODO...
+                            listOfAllCountries = resource.data.countryList
+
+                            setRecyclerAdapter(listOfAllCountries)
                         }!!
                     }
                     Status.ERROR -> {
@@ -340,6 +346,10 @@ class CountryFragment : Fragment() {
                 }
             }
         })
+    }
+
+    private fun setRecyclerAdapter(listOfAllCountries: ArrayList<Country>) {
+        val recyclerAdapter = RecyclerAdapterStateCase
     }
 
     @SuppressLint("ClickableViewAccessibility")
