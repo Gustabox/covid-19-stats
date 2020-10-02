@@ -12,13 +12,12 @@ import android.widget.AutoCompleteTextView
 import android.widget.Button
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.covid_19_stats.R
 import com.example.covid_19_stats.model.country.Country
 import com.example.covid_19_stats.model.country.Data
-import com.example.covid_19_stats.model.country.all.DataCountryAll
 import com.example.covid_19_stats.util.resource.Status
 import com.example.covid_19_stats.view.adapter.RecyclerAdapterCountry
-import com.example.covid_19_stats.view.adapter.RecyclerAdapterStateCase
 import com.example.covid_19_stats.viewmodel.MainActivityViewModel
 import kotlinx.android.synthetic.main.fragment_country.*
 
@@ -52,6 +51,7 @@ class CountryFragment : Fragment() {
         setCountryAutoComplete()
         buttonSearchClick()
         setCountryInformations()
+        getAllCountries()
 
         return view
     }
@@ -327,7 +327,8 @@ class CountryFragment : Fragment() {
     }
 
     @SuppressLint("LongLogTag")
-    private fun getAllCountries(mainActivityViewModel: MainActivityViewModel) {
+    private fun getAllCountries() {
+        val mainActivityViewModel = MainActivityViewModel()
         mainActivityViewModel.getAllCountries().observe(this, androidx.lifecycle.Observer {
             it?.let { resource ->
                 when (resource.status) {
@@ -338,7 +339,7 @@ class CountryFragment : Fragment() {
                         resource.data?.let {
                             listOfAllCountries = resource.data.countryList
 
-                            //setRecyclerAdapter(listOfAllCountries)
+                            setRecyclerAdapter(listOfAllCountries)
                         }!!
                     }
                     Status.ERROR -> {
@@ -349,8 +350,11 @@ class CountryFragment : Fragment() {
         })
     }
 
-    private fun setRecyclerAdapter(listOfAllCountries: ArrayList<DataCountryAll>) {
+    private fun setRecyclerAdapter(listOfAllCountries: ArrayList<Country>) {
         val recyclerAdapter = RecyclerAdapterCountry(listOfAllCountries)
+        recyclerViewAllCountries.adapter = recyclerAdapter
+        recyclerViewAllCountries.layoutManager = LinearLayoutManager(activity!!.applicationContext)
+        recyclerAdapter.notifyDataSetChanged()
     }
 
     @SuppressLint("ClickableViewAccessibility")

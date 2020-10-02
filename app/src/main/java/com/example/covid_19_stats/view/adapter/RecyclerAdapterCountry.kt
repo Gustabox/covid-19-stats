@@ -9,12 +9,12 @@ import com.example.covid_19_stats.model.country.Country
 import com.example.covid_19_stats.model.country.all.DataCountryAll
 import kotlinx.android.synthetic.main.recycler_view_country_cases.view.*
 
-class RecyclerAdapterCountry(private val countryList: List<DataCountryAll>) :
+class RecyclerAdapterCountry(private val countryList: List<Country>) :
     RecyclerView.Adapter<RecyclerAdapterCountry.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.recycler_view_states_cases, parent, false)
+            .inflate(R.layout.recycler_view_country_cases, parent, false)
         return ViewHolder(view)
     }
 
@@ -23,7 +23,7 @@ class RecyclerAdapterCountry(private val countryList: List<DataCountryAll>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItems(countryList[position].countryList[position])
+        holder.bindItems(countryList[position])
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
