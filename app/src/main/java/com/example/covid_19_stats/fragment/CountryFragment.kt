@@ -17,6 +17,7 @@ import com.example.covid_19_stats.model.country.Country
 import com.example.covid_19_stats.model.country.Data
 import com.example.covid_19_stats.model.country.all.DataCountryAll
 import com.example.covid_19_stats.util.resource.Status
+import com.example.covid_19_stats.view.adapter.RecyclerAdapterCountry
 import com.example.covid_19_stats.view.adapter.RecyclerAdapterStateCase
 import com.example.covid_19_stats.viewmodel.MainActivityViewModel
 import kotlinx.android.synthetic.main.fragment_country.*
@@ -337,7 +338,7 @@ class CountryFragment : Fragment() {
                         resource.data?.let {
                             listOfAllCountries = resource.data.countryList
 
-                            setRecyclerAdapter(listOfAllCountries)
+                            //setRecyclerAdapter(listOfAllCountries)
                         }!!
                     }
                     Status.ERROR -> {
@@ -348,8 +349,8 @@ class CountryFragment : Fragment() {
         })
     }
 
-    private fun setRecyclerAdapter(listOfAllCountries: ArrayList<Country>) {
-        val recyclerAdapter = RecyclerAdapterStateCase
+    private fun setRecyclerAdapter(listOfAllCountries: ArrayList<DataCountryAll>) {
+        val recyclerAdapter = RecyclerAdapterCountry(listOfAllCountries)
     }
 
     @SuppressLint("ClickableViewAccessibility")
