@@ -35,3 +35,9 @@ q
 Aapp/src/main/java/com/example/covid_19_stats/view/MainActivity.kt,7\9\7921d8b6d87e4c1a254921365a658e79aafb3ca7
 x
 Happ/src/main/java/com/example/covid_19_stats/fragment/CountryFragment.kt,8\3\83fd80c66a606a5c94656036748e496a06172869
+{
+Kapp/src/main/java/com/example/covid_19_stats/util/const/CountryConstants.kt,0\5\0522fb9601307a8f05aa6676bda65f2da0a31124
+…
+Uapp/src/main/java/com/example/covid_19_stats/view/adapter/RecyclerAdapterStateCase.kt,6\f\6fefae652796c1067a59c2a9a318ad5209084d0f
+ƒ
+Sapp/src/main/java/com/example/covid_19_stats/view/adapter/RecyclerAdapterCountry.kt,4\c\4c992de6435cf794360919b605a9b08c4d0ce1ad

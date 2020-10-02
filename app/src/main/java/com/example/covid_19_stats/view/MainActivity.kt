@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.covid_19_stats.R
 import com.example.covid_19_stats.fragment.CountryFragment
 import com.example.covid_19_stats.fragment.StateFragment
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         setTabLayoutAdapter()
 
-        testingEndPoint()
+        //testingEndPoint()
     }
 
     private fun setTabLayoutAdapter() {
@@ -46,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                         Log.d("Loading ", "loading...")
                     }
                     Status.SUCCESS -> {
-                        Log.d("Debugging this ", resource.data?.countryList!![0].name)
+                        //TODO...?
                     }
                     Status.ERROR -> {
                         Log.e("Error trying get all countries ", resource.message.toString())
