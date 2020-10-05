@@ -21,8 +21,6 @@ class MainActivity : AppCompatActivity() {
         supportActionBar!!.hide()
 
         setTabLayoutAdapter()
-
-        //testingEndPoint()
     }
 
     private fun setTabLayoutAdapter() {
@@ -36,25 +34,5 @@ class MainActivity : AppCompatActivity() {
         viewPagerAdapter.addFragment(stateFragment, "ESTADOS (BR)")
 
         viewPager.adapter = viewPagerAdapter
-    }
-
-    @SuppressLint("LongLogTag")
-    private fun testingEndPoint() {
-        val mainActivityViewModel = MainActivityViewModel()
-        mainActivityViewModel.getAllCountries().observe(this, androidx.lifecycle.Observer {
-            it?.let { resource ->
-                when (resource.status) {
-                    Status.LOADING -> {
-                        Log.d("Loading ", "loading...")
-                    }
-                    Status.SUCCESS -> {
-                        //TODO...?
-                    }
-                    Status.ERROR -> {
-                        Log.e("Error trying get all countries ", resource.message.toString())
-                    }
-                }
-            }
-        })
     }
 }
