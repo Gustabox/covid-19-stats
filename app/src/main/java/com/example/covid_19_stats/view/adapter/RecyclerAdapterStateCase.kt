@@ -31,7 +31,7 @@ class RecyclerAdapterStateCase(private val stateList: List<State>) :
             itemView.textViewDeaths.text = state.deaths.toString()
             itemView.textViewCases.text = state.cases.toString()
             itemView.textViewSuspects.text = state.suspects.toString()
-            itemView.textViewRefuses.text = state.refuses.toString()
+            itemView.textViewStateDateTime.text = state.dateTime
         }
     }
 }

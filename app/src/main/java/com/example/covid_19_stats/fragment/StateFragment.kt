@@ -12,10 +12,13 @@ import android.widget.AutoCompleteTextView
 import android.widget.Button
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.covid_19_stats.R
 import com.example.covid_19_stats.model.state.State
 import com.example.covid_19_stats.util.resource.Status
+import com.example.covid_19_stats.view.adapter.RecyclerAdapterStateCase
 import com.example.covid_19_stats.viewmodel.MainActivityViewModel
+import kotlinx.android.synthetic.main.fragment_state.*
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -27,6 +30,7 @@ class StateFragment : Fragment() {
 
     private lateinit var autoCompleteState: AutoCompleteTextView
     private lateinit var buttonSearchState: Button
+    private var listOfStates = ArrayList<State>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +38,7 @@ class StateFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        getAllStates()
     }
 
     override fun onCreateView(
@@ -45,6 +50,8 @@ class StateFragment : Fragment() {
 
         setStateAutoComplete()
         buttonSearchClick()
+
+        getAllStates()
 
         return view
     }
@@ -83,13 +90,47 @@ class StateFragment : Fragment() {
             })
     }
 
-    private fun setSpecificStateInformations(data: State) {
-//        setViewsVisibility(
-//            setToVisible = ,
-//            setToGone = ,
-//        )
+    private fun setSpecificStateInformations(state: State) {
+        setViewsVisibility(
+            setToVisible = constraintLayoutAllStates,
+            setToGone = constraintLayoutSpecificState
+        )
+        textViewStateName.text = state.name
+        textViewStateDeaths.text = state.deaths.toString()
+        textViewStateCases.text = state.cases.toString()
+        textViewStateSuspects.text = state.suspects.toString()
+        textViewStateDateTime.text = state.dateTime
+    }
 
+    @SuppressLint("LongLogTag")
+    private fun getAllStates() {
+        val mainActivityViewModel = MainActivityViewModel()
+        mainActivityViewModel.getAllStates().observe(this, androidx.lifecycle.Observer {
+            it?.let { resource ->
+                when (resource.status) {
+                    Status.LOADING -> {
+                        Log.d("Loading all countries request ", "loading...")
+                    }
+                    Status.SUCCESS -> {
+                        resource.data?.let {
+                            listOfStates = resource.data.listState
 
+                            setRecyclerAdapter(listOfStates)
+                        }!!
+                    }
+                    Status.ERROR -> {
+                        Log.e("Error in all countries request ", resource.message.toString())
+                    }
+                }
+            }
+        })
+    }
+
+    private fun setRecyclerAdapter(listOfStates: ArrayList<State>) {
+        val recyclerAdapter = RecyclerAdapterStateCase(listOfStates)
+        recyclerViewAllStates.adapter = recyclerAdapter
+        recyclerViewAllStates.layoutManager = LinearLayoutManager(activity!!.applicationContext)
+        recyclerAdapter.notifyDataSetChanged()
     }
 
     private fun setViewsVisibility(setToVisible: ConstraintLayout, setToGone: ConstraintLayout) {

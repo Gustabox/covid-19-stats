@@ -8,6 +8,6 @@ import com.example.covid_19_stats.model.state.all.DataStateAll
 interface Repository {
     suspend fun getSpecificState(state: String): State
     suspend fun getSpecificCountry(country: String): Data
-    suspend fun getAllStates(): List<DataStateAll>
+    suspend fun getAllStates(): DataStateAll
     suspend fun getAllCountries(): DataCountryAll
 }

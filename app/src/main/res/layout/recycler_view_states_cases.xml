@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="sans-serif"
-                android:text="Recuperados:"
+                android:text="Atualizado em:"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.046"
@@ -146,7 +146,7 @@
                 app:layout_constraintVertical_bias="0.177" />
 
             <TextView
-                android:id="@+id/textViewRefuses"
+                android:id="@+id/textViewStateDateTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"

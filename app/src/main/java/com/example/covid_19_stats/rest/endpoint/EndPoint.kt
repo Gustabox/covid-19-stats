@@ -17,7 +17,7 @@ interface EndPoint {
 
     //base url have a /
     @GET("")
-    suspend fun getAllStates(): List<DataStateAll>
+    suspend fun getAllStates(): DataStateAll
 
     @GET("countries")
     suspend fun getAllCountries(): DataCountryAll
