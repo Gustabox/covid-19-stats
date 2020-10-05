@@ -32,12 +32,14 @@ class StateFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_state, container, false)
-        //setStateAutoComplete()
+        findViews(view)
+
+        setStateAutoComplete()
         return view
     }
 
     private fun findViews(view: View) {
-        // autoCompleteState = view.findViewById(R.id.autoCompleteState) as AutoCompleteTextView
+        autoCompleteState = view.findViewById(R.id.autoCompleteState) as AutoCompleteTextView
     }
 
     private fun setStateAutoComplete() {

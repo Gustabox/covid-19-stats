@@ -42,9 +42,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:drawableStart="@drawable/ic_baseline_search_24"
-                    android:paddingLeft="10dp"
                     android:drawablePadding="10dp"
-                    android:hint="Pesquise por um país..."/>
+                    android:hint="Search for a country..."
+                    android:paddingLeft="10dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -55,7 +55,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
-                android:text="PESQUISAR" />
+                android:text="SEARCH" />
 
         </LinearLayout>
 
