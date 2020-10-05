@@ -65,7 +65,7 @@ class CountryFragment : Fragment() {
     @SuppressLint("LongLogTag")
     private fun showViewWithInformations(countryName: String) {
         val progressDialog = ProgressDialog(activity, R.style.alertDialogStyle)
-        progressDialog.setMessage("Aguarde...")
+        progressDialog.setMessage("Loading...")
 
         val mainActivityViewModel = MainActivityViewModel()
         mainActivityViewModel.getSpecificCountry(countryName)
@@ -83,7 +83,7 @@ class CountryFragment : Fragment() {
                         }
                         Status.ERROR -> {
                             if (progressDialog.isShowing) progressDialog.dismiss()
-                            Log.e("Error in specific state request ", resource.message.toString())
+                            Log.e("Error in specific country request ", resource.message.toString())
                         }
                     }
                 }
