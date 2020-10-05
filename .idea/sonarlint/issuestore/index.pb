@@ -43,3 +43,5 @@ Uapp/src/main/java/com/example/covid_19_stats/view/adapter/RecyclerAdapterStateC
 Sapp/src/main/java/com/example/covid_19_stats/view/adapter/RecyclerAdapterCountry.kt,4\c\4c992de6435cf794360919b605a9b08c4d0ce1ad
 X
 (app/src/main/res/values/string_array.xml,6\5\653ec5a71a2fe34339892e9997b63989edae0853
+f
+6app/src/main/res/layout/recycler_view_states_cases.xml,0\c\0cd46d20b9d78908d9e4094431dd2c38abbe71dc

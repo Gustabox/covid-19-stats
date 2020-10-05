@@ -105,7 +105,7 @@ class StateFragment : Fragment() {
     @SuppressLint("LongLogTag")
     private fun getAllStates() {
         val mainActivityViewModel = MainActivityViewModel()
-        mainActivityViewModel.getAllStates().observe(this, androidx.lifecycle.Observer {
+        mainActivityViewModel.getAllStates("").observe(this, androidx.lifecycle.Observer {
             it?.let { resource ->
                 when (resource.status) {
                     Status.LOADING -> {
