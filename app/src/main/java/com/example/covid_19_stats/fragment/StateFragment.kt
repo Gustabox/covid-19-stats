@@ -188,7 +188,7 @@ class StateFragment : Fragment() {
         autoCompleteState.setAdapter(
             ArrayAdapter<String>(
                 activity!!.applicationContext,
-                android.R.layout.simple_list_item_1,
+                R.layout.my_simple_list_item,
                 state
             )
         )

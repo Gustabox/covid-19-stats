@@ -151,7 +151,7 @@ class CountryFragment : Fragment() {
         autoCompleteCountry.setAdapter(
             ArrayAdapter<String>(
                 activity!!.applicationContext,
-                android.R.layout.simple_list_item_1,
+                R.layout.my_simple_list_item,
                 country
             )
         )
