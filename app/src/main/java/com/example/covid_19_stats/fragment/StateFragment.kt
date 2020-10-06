@@ -20,6 +20,7 @@ import com.example.covid_19_stats.util.resource.Status
 import com.example.covid_19_stats.view.adapter.RecyclerAdapterStateCase
 import com.example.covid_19_stats.viewmodel.MainActivityViewModel
 import kotlinx.android.synthetic.main.fragment_state.*
+import java.text.DecimalFormat
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -131,10 +132,12 @@ class StateFragment : Fragment() {
             setToVisible = constraintLayoutSpecificState,
             setToGone = constraintLayoutAllStates
         )
+        val formatter = DecimalFormat("#,###,###")
+
         textViewFragmentStateName.text = state.name
-        textViewStateDeaths.text = state.deaths.toString()
-        textViewStateCases.text = state.cases.toString()
-        textViewStateSuspects.text = state.suspects.toString()
+        textViewStateDeaths.text = formatter.format(state.deaths.toString().toInt())
+        textViewStateCases.text = formatter.format(state.cases.toString().toInt())
+        textViewStateSuspects.text = formatter.format(state.suspects.toString().toInt())
         textViewFragmentStateDateTime.text = state.dateTime
     }
 
@@ -185,7 +188,7 @@ class StateFragment : Fragment() {
         autoCompleteState.setAdapter(
             ArrayAdapter<String>(
                 activity!!.applicationContext,
-                android.R.layout.simple_list_item_1,
+                R.layout.my_simple_list_item,
                 state
             )
         )

@@ -20,6 +20,7 @@ import com.example.covid_19_stats.util.resource.Status
 import com.example.covid_19_stats.view.adapter.RecyclerAdapterCountry
 import com.example.covid_19_stats.viewmodel.MainActivityViewModel
 import kotlinx.android.synthetic.main.fragment_country.*
+import java.text.DecimalFormat
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -95,11 +96,13 @@ class CountryFragment : Fragment() {
             setToVisible = constraintLayoutSpecificCountry,
             setToGone = constraintLayoutAllCountries
         )
+        val formatter = DecimalFormat("##,###,###")
+
         textViewCountryName.text = country.data.name
-        textViewCountryCases.text = country.data.cases.toString()
-        textViewCountryConfirmed.text = country.data.confirmed.toString()
-        textViewCountryDeaths.text = country.data.deaths.toString()
-        textViewCountryRecovered.text = country.data.recovered.toString()
+        textViewCountryCases.text = formatter.format(country.data.cases.toString().toInt())
+        textViewCountryConfirmed.text = formatter.format(country.data.confirmed.toString().toInt())
+        textViewCountryDeaths.text = formatter.format(country.data.deaths.toString().toInt())
+        textViewCountryRecovered.text = formatter.format(country.data.recovered.toString().toInt())
     }
 
     private fun setViewsVisibility(
@@ -148,7 +151,7 @@ class CountryFragment : Fragment() {
         autoCompleteCountry.setAdapter(
             ArrayAdapter<String>(
                 activity!!.applicationContext,
-                android.R.layout.simple_list_item_1,
+                R.layout.my_simple_list_item,
                 country
             )
         )
