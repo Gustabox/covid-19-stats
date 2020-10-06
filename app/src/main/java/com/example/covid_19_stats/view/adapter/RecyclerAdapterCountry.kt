@@ -8,6 +8,7 @@ import com.example.covid_19_stats.R
 import com.example.covid_19_stats.model.country.Country
 import com.example.covid_19_stats.model.country.all.DataCountryAll
 import kotlinx.android.synthetic.main.recycler_view_country_cases.view.*
+import java.text.DecimalFormat
 
 class RecyclerAdapterCountry(private val countryList: List<Country>) :
     RecyclerView.Adapter<RecyclerAdapterCountry.ViewHolder>() {
@@ -28,12 +29,13 @@ class RecyclerAdapterCountry(private val countryList: List<Country>) :
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindItems(country: Country) {
+            val formatter = DecimalFormat("##,###,###")
+
             itemView.textViewCountryListName.text = country.name
-            itemView.textViewCountryListCases.text = country.cases.toString()
-            itemView.textViewCountryListConfirmed.text = country.cases.toString()
-            itemView.textViewCountryListDeaths.text = country.deaths.toString()
-            itemView.textViewCountryListRecovered.text = country.recovered.toString()
-            //itemView.textViewCountryListUpdatedAt.text = country.updatedAt
+            itemView.textViewCountryListCases.text = formatter.format(country.cases.toString().toInt())
+            itemView.textViewCountryListConfirmed.text = formatter.format(country.cases.toString().toInt())
+            itemView.textViewCountryListDeaths.text = formatter.format(country.deaths.toString().toInt())
+            itemView.textViewCountryListRecovered.text = formatter.format(country.recovered.toString().toInt())
         }
     }
 }
