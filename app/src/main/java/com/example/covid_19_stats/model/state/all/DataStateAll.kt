@@ -5,5 +5,5 @@ import com.google.gson.annotations.SerializedName
 
 data class DataStateAll(
     @SerializedName("data")
-    val stateList: List<State>
+    val listState: ArrayList<State>
 )

@@ -12,7 +12,7 @@ class RepositoryImpl : Repository {
 
     override suspend fun getSpecificCountry(country: String) = endPoint.getSpecificCountry(country)
 
-    override suspend fun getAllStates() = endPoint.getAllStates()
+    override suspend fun getAllStates(emptyName: String) = endPoint.getAllStates(emptyName)
 
     override suspend fun getAllCountries() = endPoint.getAllCountries()
 

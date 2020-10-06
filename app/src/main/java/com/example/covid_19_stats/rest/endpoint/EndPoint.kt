@@ -15,9 +15,8 @@ interface EndPoint {
     @GET("{country}")
     suspend fun getSpecificCountry(@Path("country") country: String): Data
 
-    //base url have a /
-    @GET("")
-    suspend fun getAllStates(): List<DataStateAll>
+    @GET("{emptyPath}")
+    suspend fun getAllStates(@Path("emptyPath") emptyName: String): DataStateAll
 
     @GET("countries")
     suspend fun getAllCountries(): DataCountryAll

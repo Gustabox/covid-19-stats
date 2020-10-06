@@ -11,8 +11,6 @@ data class State(
     val deaths: Int,
     @SerializedName("suspects")
     val suspects: Int,
-    @SerializedName("refuses")
-    val refuses: Int,
     @SerializedName("datetime")
     val dateTime: String
 )
