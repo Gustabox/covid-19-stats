@@ -92,8 +92,8 @@ class StateFragment : Fragment() {
 
     private fun setSpecificStateInformations(state: State) {
         setViewsVisibility(
-            setToVisible = constraintLayoutAllStates,
-            setToGone = constraintLayoutSpecificState
+            setToVisible = constraintLayoutSpecificState,
+            setToGone = constraintLayoutAllStates
         )
         textViewStateName.text = state.name
         textViewStateDeaths.text = state.deaths.toString()
