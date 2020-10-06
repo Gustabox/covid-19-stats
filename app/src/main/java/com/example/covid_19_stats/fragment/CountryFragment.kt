@@ -59,7 +59,11 @@ class CountryFragment : Fragment() {
 
     private fun buttonSearchClick() {
         buttonSearchCountry.setOnClickListener {
-            showViewWithInformations(autoCompleteCountry.text.toString())
+            if (autoCompleteCountry.text.toString().isNotEmpty()) {
+                showViewWithInformations(autoCompleteCountry.text.toString())
+            } else {
+                autoCompleteCountry.error = "The field can't be empty"
+            }
         }
     }
 
