@@ -93,7 +93,7 @@ class StateFragment : Fragment() {
         if (selectedState == state[20]) showViewWithInformations(StateConstants.MS)
         if (selectedState == state[21]) showViewWithInformations(StateConstants.RN)
         if (selectedState == state[22]) showViewWithInformations(StateConstants.TO)
-        if (selectedState == state[23]) showViewWithInformations(StateConstants.TO)
+        if (selectedState == state[23]) showViewWithInformations(StateConstants.RO)
         if (selectedState == state[24]) showViewWithInformations(StateConstants.RR)
         if (selectedState == state[25]) showViewWithInformations(StateConstants.AP)
         if (selectedState == state[26]) showViewWithInformations(StateConstants.AC)
