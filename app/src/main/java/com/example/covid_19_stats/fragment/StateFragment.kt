@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.covid_19_stats.R
 import com.example.covid_19_stats.model.state.State
+import com.example.covid_19_stats.util.const.StateConstants
 import com.example.covid_19_stats.util.resource.Status
 import com.example.covid_19_stats.view.adapter.RecyclerAdapterStateCase
 import com.example.covid_19_stats.viewmodel.MainActivityViewModel
@@ -66,33 +67,35 @@ class StateFragment : Fragment() {
     private fun setStateUF() {
         val selectedState = autoCompleteState.text.toString()
 
-        if (selectedState == state[0]) showViewWithInformations("sp")
-        if (selectedState == state[1]) showViewWithInformations("ba")
-        if (selectedState == state[2]) showViewWithInformations("mg")
-        if (selectedState == state[3]) showViewWithInformations("rj")
-        if (selectedState == state[4]) showViewWithInformations("ce")
-        if (selectedState == state[5]) showViewWithInformations("pa")
-        if (selectedState == state[6]) showViewWithInformations("sc")
-        if (selectedState == state[7]) showViewWithInformations("go")
-        if (selectedState == state[8]) showViewWithInformations("rs")
-        if (selectedState == state[9]) showViewWithInformations("df")
-        if (selectedState == state[10]) showViewWithInformations("pr")
-        if (selectedState == state[11]) showViewWithInformations("ma")
-        if (selectedState == state[12]) showViewWithInformations("pe")
-        if (selectedState == state[13]) showViewWithInformations("am")
-        if (selectedState == state[14]) showViewWithInformations("es")
-        if (selectedState == state[15]) showViewWithInformations("mt")
-        if (selectedState == state[16]) showViewWithInformations("pb")
-        if (selectedState == state[17]) showViewWithInformations("pi")
-        if (selectedState == state[18]) showViewWithInformations("al")
-        if (selectedState == state[19]) showViewWithInformations("se")
-        if (selectedState == state[20]) showViewWithInformations("ms")
-        if (selectedState == state[21]) showViewWithInformations("rn")
-        if (selectedState == state[22]) showViewWithInformations("to")
-        if (selectedState == state[23]) showViewWithInformations("ro")
-        if (selectedState == state[24]) showViewWithInformations("rr")
-        if (selectedState == state[25]) showViewWithInformations("ap")
-        if (selectedState == state[26]) showViewWithInformations("ac")
+        if (selectedState == state[0]) showViewWithInformations(StateConstants.SP)
+        if (selectedState == state[1]) showViewWithInformations(StateConstants.BA)
+        if (selectedState == state[2]) showViewWithInformations(StateConstants.MG)
+        if (selectedState == state[3]) showViewWithInformations(StateConstants.RJ)
+        if (selectedState == state[4]) showViewWithInformations(StateConstants.CE)
+        if (selectedState == state[5]) showViewWithInformations(StateConstants.PA)
+        if (selectedState == state[6]) showViewWithInformations(StateConstants.SC)
+        if (selectedState == state[7]) showViewWithInformations(StateConstants.GO)
+        if (selectedState == state[8]) showViewWithInformations(StateConstants.RS)
+        if (selectedState == state[9]) showViewWithInformations(StateConstants.DF)
+        if (selectedState == state[10]) showViewWithInformations(StateConstants.PR)
+
+        if (selectedState == state[11]) showViewWithInformations(StateConstants.MA)
+        if (selectedState == state[12]) showViewWithInformations(StateConstants.PE)
+        if (selectedState == state[13]) showViewWithInformations(StateConstants.AM)
+        if (selectedState == state[14]) showViewWithInformations(StateConstants.ES)
+        if (selectedState == state[15]) showViewWithInformations(StateConstants.MT)
+        if (selectedState == state[16]) showViewWithInformations(StateConstants.PB)
+        if (selectedState == state[17]) showViewWithInformations(StateConstants.PI)
+
+        if (selectedState == state[18]) showViewWithInformations(StateConstants.AL)
+        if (selectedState == state[19]) showViewWithInformations(StateConstants.SE)
+        if (selectedState == state[20]) showViewWithInformations(StateConstants.MS)
+        if (selectedState == state[21]) showViewWithInformations(StateConstants.RN)
+        if (selectedState == state[22]) showViewWithInformations(StateConstants.TO)
+        if (selectedState == state[23]) showViewWithInformations(StateConstants.TO)
+        if (selectedState == state[24]) showViewWithInformations(StateConstants.RR)
+        if (selectedState == state[25]) showViewWithInformations(StateConstants.AP)
+        if (selectedState == state[26]) showViewWithInformations(StateConstants.AC)
     }
 
     @SuppressLint("LongLogTag")
@@ -128,11 +131,11 @@ class StateFragment : Fragment() {
             setToVisible = constraintLayoutSpecificState,
             setToGone = constraintLayoutAllStates
         )
-        textViewStateName.text = state.name
+        textViewFragmentStateName.text = state.name
         textViewStateDeaths.text = state.deaths.toString()
         textViewStateCases.text = state.cases.toString()
         textViewStateSuspects.text = state.suspects.toString()
-        textViewStateDateTime.text = state.dateTime
+        textViewFragmentStateDateTime.text = state.dateTime
     }
 
     @SuppressLint("LongLogTag")
