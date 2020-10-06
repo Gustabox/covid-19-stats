@@ -37,10 +37,10 @@ class MainActivityViewModel : ViewModel() {
         }
     }
 
-    fun getAllStates(test: String) = liveData(Dispatchers.IO) {
+    fun getAllStates(emptyName: String) = liveData(Dispatchers.IO) {
         emit(Resource.loading(null))
         try {
-            emit(Resource.success(repository.getAllStates(test)))
+            emit(Resource.success(repository.getAllStates(emptyName)))
         } catch (e: Exception) {
             emit(Resource.error(null, e.toString()))
         }

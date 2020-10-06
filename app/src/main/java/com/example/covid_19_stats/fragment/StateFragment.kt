@@ -31,6 +31,7 @@ class StateFragment : Fragment() {
     private lateinit var autoCompleteState: AutoCompleteTextView
     private lateinit var buttonSearchState: Button
     private var listOfStates = ArrayList<State>()
+    private lateinit var state: Array<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,8 +59,40 @@ class StateFragment : Fragment() {
 
     private fun buttonSearchClick() {
         buttonSearchState.setOnClickListener {
-            showViewWithInformations(autoCompleteState.text.toString())
+            setStateUF()
         }
+    }
+
+    private fun setStateUF() {
+        val selectedState = autoCompleteState.text.toString()
+
+        if (selectedState == state[0]) showViewWithInformations("sp")
+        if (selectedState == state[1]) showViewWithInformations("ba")
+        if (selectedState == state[2]) showViewWithInformations("mg")
+        if (selectedState == state[3]) showViewWithInformations("rj")
+        if (selectedState == state[4]) showViewWithInformations("ce")
+        if (selectedState == state[5]) showViewWithInformations("pa")
+        if (selectedState == state[6]) showViewWithInformations("sc")
+        if (selectedState == state[7]) showViewWithInformations("go")
+        if (selectedState == state[8]) showViewWithInformations("rs")
+        if (selectedState == state[9]) showViewWithInformations("df")
+        if (selectedState == state[10]) showViewWithInformations("pr")
+        if (selectedState == state[11]) showViewWithInformations("ma")
+        if (selectedState == state[12]) showViewWithInformations("pe")
+        if (selectedState == state[13]) showViewWithInformations("am")
+        if (selectedState == state[14]) showViewWithInformations("es")
+        if (selectedState == state[15]) showViewWithInformations("mt")
+        if (selectedState == state[16]) showViewWithInformations("pb")
+        if (selectedState == state[17]) showViewWithInformations("pi")
+        if (selectedState == state[18]) showViewWithInformations("al")
+        if (selectedState == state[19]) showViewWithInformations("se")
+        if (selectedState == state[20]) showViewWithInformations("ms")
+        if (selectedState == state[21]) showViewWithInformations("rn")
+        if (selectedState == state[22]) showViewWithInformations("to")
+        if (selectedState == state[23]) showViewWithInformations("ro")
+        if (selectedState == state[24]) showViewWithInformations("rr")
+        if (selectedState == state[25]) showViewWithInformations("ap")
+        if (selectedState == state[26]) showViewWithInformations("ac")
     }
 
     @SuppressLint("LongLogTag")
@@ -144,7 +177,7 @@ class StateFragment : Fragment() {
     }
 
     private fun setStateAutoComplete() {
-        val state: Array<String> = resources.getStringArray(R.array.arrayOfStates)
+        state = resources.getStringArray(R.array.arrayOfStates)
 
         autoCompleteState.setAdapter(
             ArrayAdapter<String>(

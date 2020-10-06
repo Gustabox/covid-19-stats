@@ -16,7 +16,7 @@ interface EndPoint {
     suspend fun getSpecificCountry(@Path("country") country: String): Data
 
     @GET("{emptyPath}")
-    suspend fun getAllStates(@Path("emptyPath") test: String): DataStateAll
+    suspend fun getAllStates(@Path("emptyPath") emptyName: String): DataStateAll
 
     @GET("countries")
     suspend fun getAllCountries(): DataCountryAll
