@@ -62,7 +62,7 @@ class CountryFragment : Fragment() {
             if (autoCompleteCountry.text.toString().isNotEmpty()) {
                 showViewWithInformations(autoCompleteCountry.text.toString())
             } else {
-                autoCompleteCountry.error = "The field can't be empty"
+                textInputLayoutCountry.error = "The field can't be empty"
             }
         }
     }
